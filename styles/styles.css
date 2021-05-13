@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+:root {
+  --primary-dark-blue: hsl(233, 47%, 7%);
+  --primary-blue: hsl(244, 38%, 16%);
+  --primary-violet: hsl(277, 64%, 61%);
+
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-white-main: hsla(0, 0%, 100%, 0.75);
+  --neutral-white-head: hsla(0, 0%, 100%, 0.6);
+
+  --font-size: 15px;
+
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+main {
+  background-color: var(--neutral-white);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  width: 75%;
+  height: 80vh;
+  background-color: var(--primary-dark-blue);
+  box-shadow: 3px 5px 10px 1px #00000080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 75%;
+  height: 50vh;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: var(--primary-blue);
+  display: flex;
+}
+
+.left,
+.right {
+  width: 50%;
+  height: 100%;
+}
+
+.left .content {
+  font-family: Inter;
+  margin: 50px 50px 40px 40px;
+  height: 81%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text > h1 {
+  color: var(--neutral-white);
+  word-wrap: normal;
+  overflow-wrap: normal;
+  flex-wrap: wrap;
+  float: left;
+}
+
+h1 span {
+  color: var(--primary-violet);
+}
+
+.text > p {
+  margin-top: 24px;
+  color: var(--neutral-white-main);
+  float: left;
+}
+
+.content .stats {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+
+.companies,
+.templates,
+.queries {
+  width: 33.33%;
+}
+
+.companies > h1,
+.templates > h1,
+.queries > h1 {
+  color: var(--neutral-white);
+}
+
+.companies > p,
+.templates > p,
+.queries > p {
+  color: var(--neutral-white-main);
+}
+
+.companies {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.templates {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.queries {
+  grid-row: 1/2;
+  grid-column: 3/4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.right {
+  grid-area: image;
+  background-image: url(../images/image-header-desktop.jpg);
+  background-color: var(--primary-violet);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 375px) {
+  .background {
+    width: 100%;
+    height: 100%;
+  }
+
+  .body {
+      background-color: var(--primary-dark-blue);
+  }
+
+  .card {
+    height: auto;
+    width: 95%;
+    margin-top: 5vh;
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .right {
+    order: 1;
+    height: 30vh;
+  }
+
+  .left {
+    height: auto;
+    order: 2;
+  }
+
+  .left .content {
+      justify-content: flex-start;
+      text-align: center;
+  }
+
+  .left .stats {
+      margin-top: 16px;
+      margin-bottom: 8px;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .companies,
+  .templates,
+  .queries {
+      margin-top: 24px;
+  }
+}
